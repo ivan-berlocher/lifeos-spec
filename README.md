@@ -54,6 +54,24 @@ LifeOS explicitly separates **symbolic reasoning** from **perceptual and interpr
 
 This separation enables sovereign deployment: symbolic layers run anywhere, neural acceleration is invoked only when needed and authorized.
 
+### Explainability by Design
+
+LifeOS is an **Explainable Web** system — not merely Explainable AI.
+
+| Approach | Explains |
+|----------|----------|
+| **XAI** (Explainable AI) | A model's outputs |
+| **Explainable Web** | A system's decisions |
+
+Facts, relations, and decisions remain **inspectable and attributable** across all layers:
+
+- **What** was decided (action trace)
+- **Why** it was decided (SenseMaking frame)
+- **Who** authorized it (Double Lock audit)
+- **When** and under what presence state
+
+> *LifeOS extends the Web from explainable data to explainable decisions.*
+
 ---
 
 ## 📐 What is this repository?
