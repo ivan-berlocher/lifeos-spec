@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="650" viewBox="0 0 900 650" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="europeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:0.3"/>
+    </linearGradient>
+    <linearGradient id="americasGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:0.3"/>
+    </linearGradient>
+    <linearGradient id="asiaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:0.3"/>
+    </linearGradient>
+    
+    <!-- Arrow marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6B7280"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="650" fill="#0F172A"/>
+  
+  <!-- Title -->
+  <text x="450" y="45" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="bold" fill="#F8FAFC">
+    🌍 GLOBAL FEDERATION OF COGNITIVE SOVEREIGNTIES 🌍
+  </text>
+  <text x="450" y="75" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94A3B8">
+    "Pas de centre. Pas de maître." — No center. No master.
+  </text>
+  
+  <!-- P2P Connection Lines -->
+  <g stroke="#6B7280" stroke-width="2" stroke-dasharray="8,4" fill="none">
+    <!-- Europe to Americas -->
+    <path d="M 300 240 Q 450 180 600 240" marker-end="url(#arrowhead)"/>
+    <path d="M 600 240 Q 450 180 300 240" marker-end="url(#arrowhead)"/>
+    
+    <!-- Europe to Asia -->
+    <path d="M 200 340 Q 450 500 450 420" marker-end="url(#arrowhead)"/>
+    <path d="M 450 420 Q 450 500 200 340" marker-end="url(#arrowhead)"/>
+    
+    <!-- Americas to Asia -->
+    <path d="M 700 340 Q 450 500 450 420" marker-end="url(#arrowhead)"/>
+    <path d="M 450 420 Q 450 500 700 340" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- EUROPE Cluster -->
+  <g transform="translate(70, 140)">
+    <rect x="0" y="0" width="260" height="220" rx="16" fill="url(#europeGrad)" stroke="#3B82F6" stroke-width="2"/>
+    <text x="130" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#60A5FA">
+      🇪🇺 EUROPE
+    </text>
+    <text x="130" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#93C5FD">Cluster</text>
+    
+    <!-- Nodes -->
+    <g transform="translate(20, 75)">
+      <rect width="220" height="130" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+      <text x="110" y="25" text-anchor="middle" font-family="monospace" font-size="11" fill="#CBD5E1">Regional Nodes</text>
+      
+      <g transform="translate(15, 40)">
+        <rect width="55" height="35" rx="4" fill="#1E40AF" opacity="0.6"/>
+        <text x="27" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#BFDBFE">France</text>
+      </g>
+      <g transform="translate(80, 40)">
+        <rect width="55" height="35" rx="4" fill="#1E40AF" opacity="0.6"/>
+        <text x="27" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#BFDBFE">Germany</text>
+      </g>
+      <g transform="translate(145, 40)">
+        <rect width="55" height="35" rx="4" fill="#1E40AF" opacity="0.6"/>
+        <text x="27" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#BFDBFE">Nordic</text>
+      </g>
+      <g transform="translate(47, 85)">
+        <rect width="55" height="35" rx="4" fill="#1E40AF" opacity="0.6"/>
+        <text x="27" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#BFDBFE">Spain</text>
+      </g>
+      <g transform="translate(112, 85)">
+        <rect width="55" height="35" rx="4" fill="#1E40AF" opacity="0.6"/>
+        <text x="27" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#BFDBFE">Italy</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- AMERICAS Cluster -->
+  <g transform="translate(570, 140)">
+    <rect x="0" y="0" width="260" height="220" rx="16" fill="url(#americasGrad)" stroke="#10B981" stroke-width="2"/>
+    <text x="130" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#34D399">
+      🇺🇸 AMERICAS
+    </text>
+    <text x="130" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6EE7B7">Cluster</text>
+    
+    <!-- Nodes -->
+    <g transform="translate(20, 75)">
+      <rect width="220" height="130" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+      <text x="110" y="25" text-anchor="middle" font-family="monospace" font-size="11" fill="#CBD5E1">Regional Nodes</text>
+      
+      <g transform="translate(15, 40)">
+        <rect width="55" height="35" rx="4" fill="#065F46" opacity="0.6"/>
+        <text x="27" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#A7F3D0">US East</text>
+      </g>
+      <g transform="translate(80, 40)">
+        <rect width="55" height="35" rx="4" fill="#065F46" opacity="0.6"/>
+        <text x="27" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#A7F3D0">US West</text>
+      </g>
+      <g transform="translate(145, 40)">
+        <rect width="55" height="35" rx="4" fill="#065F46" opacity="0.6"/>
+        <text x="27" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#A7F3D0">Canada</text>
+      </g>
+      <g transform="translate(47, 85)">
+        <rect width="55" height="35" rx="4" fill="#065F46" opacity="0.6"/>
+        <text x="27" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#A7F3D0">Brazil</text>
+      </g>
+      <g transform="translate(112, 85)">
+        <rect width="55" height="35" rx="4" fill="#065F46" opacity="0.6"/>
+        <text x="27" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#A7F3D0">Mexico</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- ASIA-PAC Cluster -->
+  <g transform="translate(320, 400)">
+    <rect x="0" y="0" width="260" height="220" rx="16" fill="url(#asiaGrad)" stroke="#F59E0B" stroke-width="2"/>
+    <text x="130" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#FBBF24">
+      🌏 ASIA-PACIFIC
+    </text>
+    <text x="130" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#FCD34D">Cluster</text>
+    
+    <!-- Nodes -->
+    <g transform="translate(20, 75)">
+      <rect width="220" height="130" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+      <text x="110" y="25" text-anchor="middle" font-family="monospace" font-size="11" fill="#CBD5E1">Regional Nodes</text>
+      
+      <g transform="translate(15, 40)">
+        <rect width="55" height="35" rx="4" fill="#92400E" opacity="0.6"/>
+        <text x="27" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#FDE68A">Japan</text>
+      </g>
+      <g transform="translate(80, 40)">
+        <rect width="55" height="35" rx="4" fill="#92400E" opacity="0.6"/>
+        <text x="27" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#FDE68A">Korea</text>
+      </g>
+      <g transform="translate(145, 40)">
+        <rect width="55" height="35" rx="4" fill="#92400E" opacity="0.6"/>
+        <text x="27" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#FDE68A">Australia</text>
+      </g>
+      <g transform="translate(47, 85)">
+        <rect width="55" height="35" rx="4" fill="#92400E" opacity="0.6"/>
+        <text x="27" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#FDE68A">India</text>
+      </g>
+      <g transform="translate(112, 85)">
+        <rect width="55" height="35" rx="4" fill="#92400E" opacity="0.6"/>
+        <text x="27" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#FDE68A">Singapore</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- P2P Protocol Legend -->
+  <g transform="translate(680, 420)">
+    <rect x="0" y="0" width="200" height="180" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <text x="100" y="25" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC">P2P Protocol</text>
+    
+    <g transform="translate(15, 45)">
+      <circle cx="8" cy="8" r="6" fill="#22C55E"/>
+      <text x="25" y="12" font-family="system-ui, sans-serif" font-size="11" fill="#CBD5E1">No central coordinator</text>
+    </g>
+    <g transform="translate(15, 75)">
+      <circle cx="8" cy="8" r="6" fill="#3B82F6"/>
+      <text x="25" y="12" font-family="system-ui, sans-serif" font-size="11" fill="#CBD5E1">Clusters discover peers</text>
+    </g>
+    <g transform="translate(15, 105)">
+      <circle cx="8" cy="8" r="6" fill="#F59E0B"/>
+      <text x="25" y="12" font-family="system-ui, sans-serif" font-size="11" fill="#CBD5E1">Data stays in region</text>
+    </g>
+    <g transform="translate(15, 135)">
+      <circle cx="8" cy="8" r="6" fill="#EC4899"/>
+      <text x="25" y="12" font-family="system-ui, sans-serif" font-size="11" fill="#CBD5E1">Models shared globally</text>
+    </g>
+  </g>
+  
+  <!-- User Pods visualization -->
+  <g transform="translate(20, 420)">
+    <rect x="0" y="0" width="200" height="180" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <text x="100" y="25" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC">Solid-Compatible Pods</text>
+    
+    <g transform="translate(20, 50)">
+      <text x="80" y="0" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" fill="#F8FAFC">👤 👤 👤</text>
+      <text x="80" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94A3B8">User owns their data</text>
+      <text x="80" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94A3B8">Apps come to the data</text>
+      
+      <rect x="20" y="70" width="120" height="50" rx="6" fill="#312E81" stroke="#4F46E5" stroke-width="1"/>
+      <text x="80" y="92" text-anchor="middle" font-family="monospace" font-size="10" fill="#A5B4FC">/pod/lifeos/memory/</text>
+      <text x="80" y="108" text-anchor="middle" font-family="monospace" font-size="9" fill="#818CF8">encrypted & sovereign</text>
+    </g>
+  </g>
+  
+  <!-- Footer -->
+  <text x="450" y="635" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#64748B">
+    LifeOS Specification v0.1 — lifeos.dev — MIT License
+  </text>
+</svg>
