@@ -1,6 +1,6 @@
 # LifeOS Specification
 
-> **"A distributed cognitive architecture for human sovereignty in the age of AI"**
+> **A presence-oriented cognitive architecture grounded in symbolic reasoning and augmented by selective, accelerated intelligence.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Spec Version](https://img.shields.io/badge/spec-v0.1-blue.svg)](./spec/00-overview.md)
@@ -35,6 +35,24 @@ LifeOS is not another AI assistant. It's a **specification** for building cognit
 "Pas de centre. Pas de maître."
 "No center. No master."
 ```
+
+---
+
+## 🧠 Architectural Vision
+
+LifeOS explicitly separates **symbolic reasoning** from **perceptual and interpretative intelligence**.
+
+| Layer | Nature | Role |
+|-------|--------|------|
+| **Symbolic reasoning** | Deterministic, explainable, lightweight | Operates on structured facts, relationships, and rules (W3C / Solid-aligned) |
+| **Perceptual intelligence** | Probabilistic, multimodal, compute-intensive | Invoked selectively to generate meaning, summaries, and presence |
+
+**LifeOS does not conflate logic and intelligence.**
+
+- Logic grounds decisions
+- Intelligence augments meaning
+
+This separation enables sovereign deployment: symbolic layers run anywhere, neural acceleration is invoked only when needed and authorized.
 
 ---
 
