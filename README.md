@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Spec Version](https://img.shields.io/badge/spec-v0.1-blue.svg)](./spec/00-overview.md)
-[![DOI](https://img.shields.io/badge/DOI-pending-lightgrey.svg)](https://zenodo.org)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18028496.svg)](https://doi.org/10.5281/zenodo.18028496)
 
 ---
 
@@ -174,12 +174,10 @@ If you use LifeOS in academic work, please cite:
   year         = {2025},
   version      = {v0.1},
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.XXXXXXX},
+  doi          = {10.5281/zenodo.18028496},
   url          = {https://github.com/ivan-berlocher/lifeos-spec}
 }
 ```
-
-> *DOI will be assigned upon Zenodo deposit.*
 
 ---
 

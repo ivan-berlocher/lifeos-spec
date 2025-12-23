@@ -372,4 +372,4 @@ This example demonstrates how a simple intention ("send an email") is processed 
 
 **Document version:** 0.1  
 **Last updated:** December 2025  
-**DOI:** 10.5281/zenodo.XXXXXXX (pending)
+**DOI:** 10.5281/zenodo.18028496
