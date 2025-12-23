@@ -66,9 +66,11 @@ LifeOS is an **Explainable Web** system — not merely Explainable AI.
 Facts, relations, and decisions remain **inspectable and attributable** across all layers:
 
 - **What** was decided (action trace)
-- **Why** it was decided (SenseMaking frame)
-- **Who** authorized it (Double Lock audit)
+- **Why** it was decided (justification trace — see [SenseMaking](./spec/03-sense-making.md))
+- **Who** authorized it (consent trace — see [Double Lock](./spec/04-harmonia.md#the-double-lock))
 - **When** and under what presence state
+
+Deterministic layers remain auditable; probabilistic layers remain attributable.
 
 > *LifeOS extends the Web from explainable data to explainable decisions.*
 
