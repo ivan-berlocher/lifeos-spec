@@ -4,6 +4,21 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Spec Version](https://img.shields.io/badge/spec-v0.1-blue.svg)](./spec/00-overview.md)
+[![DOI](https://img.shields.io/badge/DOI-pending-lightgrey.svg)](https://zenodo.org)
+
+---
+
+## 📖 Abstract
+
+**LifeOS** is a formal specification for building cognitive systems that preserve human authority over memory, interpretation, and action. It defines a normative architecture composed of:
+
+- A **cognitive kernel** enforcing the law `Presence × Memory × Action`
+- **Memory subsystems** (STM/MTM/LTM) with intentional consolidation
+- **SenseMaking** as a computable interpretive object
+- **Harmonia**, the cognitive orchestration layer transforming intent into coordinated agent proposals under the **Double Lock** governance mechanism
+- **Distributed infrastructure** principles for federated, sovereign deployment
+
+This specification is implementation-agnostic and designed to support academic research, regional infrastructure projects, and sovereign AI initiatives.
 
 ---
 
@@ -79,6 +94,14 @@ This is the **formal specification** of LifeOS — like an RFC for cognitive arc
 | [05-solid-bridge](./spec/05-solid-bridge.md) | Integration with Solid Protocol |
 | [06-federation](./spec/06-federation.md) | P2P distributed infrastructure |
 | [07-agents](./spec/07-agents.md) | Agent architecture & governance |
+
+---
+
+## 🎯 See It In Action
+
+> *"Show me one complete path through the system."*
+
+**[Intent to Action: A Complete Trace](./examples/intent-to-action.md)** — Follow a single human intention from emergence to resolution, through every layer of LifeOS.
 
 ---
 
@@ -163,7 +186,27 @@ MIT License — Build freely, attribute kindly.
 
 ---
 
-## 👤 Author
+## � Citation
+
+If you use LifeOS in academic work, please cite:
+
+```bibtex
+@software{googma2024lifeos,
+  author       = {Googma, Ivan},
+  title        = {{LifeOS: A Distributed Cognitive Architecture for Human Sovereignty in the Age of AI}},
+  year         = {2024},
+  version      = {v0.1},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.XXXXXXX},
+  url          = {https://github.com/ivan-berlocher/lifeos-spec}
+}
+```
+
+> *DOI will be assigned upon Zenodo deposit.*
+
+---
+
+## �👤 Author
 
 **Ivan Berlocher** — Building cognitive sovereignty, one spec at a time.
 

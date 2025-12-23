@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this specification, please cite it as below."
+type: software
+title: "LifeOS: A Distributed Cognitive Architecture for Human Sovereignty in the Age of AI"
+version: 0.1.0
+date-released: 2024-12-23
+authors:
+  - family-names: "Googma"
+    given-names: "Ivan"
+repository-code: "https://github.com/ivan-berlocher/lifeos-spec"
+license: MIT
+keywords:
+  - cognitive architecture
+  - human sovereignty
+  - distributed systems
+  - AI governance
+  - memory systems
+  - sense-making
+  - solid protocol
+  - federation
+abstract: >-
+  LifeOS is a formal specification for building cognitive systems that 
+  preserve human authority over memory, interpretation, and action. 
+  It defines a normative architecture composed of a cognitive kernel, 
+  memory subsystems (STM/MTM/LTM), SenseMaking processes, orchestration 
+  layers (Harmonia), and distributed infrastructure principles.
