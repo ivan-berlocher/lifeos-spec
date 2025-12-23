@@ -110,6 +110,12 @@ This is the **formal specification** of LifeOS — like an RFC for cognitive arc
 | [06-federation](./spec/06-federation.md) | P2P distributed infrastructure |
 | [07-agents](./spec/07-agents.md) | Agent architecture & governance |
 
+### Deep Dives
+
+| Document | Description |
+|----------|-------------|
+| [docs/reasoning.md](./docs/reasoning.md) | Three reasoning modalities: deductive, interpretive, intentional |
+
 ---
 
 ## 🎯 See It In Action
