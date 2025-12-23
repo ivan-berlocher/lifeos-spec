@@ -3,8 +3,8 @@
 > **A presence-oriented cognitive architecture grounded in symbolic reasoning and augmented by selective, accelerated intelligence.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Spec Version](https://img.shields.io/badge/spec-v0.1-blue.svg)](./spec/00-overview.md)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18028496.svg)](https://doi.org/10.5281/zenodo.18028496)
+[![Spec Version](https://img.shields.io/badge/spec-v0.2-blue.svg)](./spec/00-overview.md)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18029754.svg)](https://doi.org/10.5281/zenodo.18029754)
 
 ---
 
