@@ -2,231 +2,159 @@
 
 > **"LifeOS does not conflate logic and intelligence."**
 
-This document defines the three distinct reasoning modalities in LifeOS and their architectural separation.
+---
+
+## Scope
+
+### What LifeOS Reasons About
+
+- **Structured facts**: Your calendar, contacts, notes, patterns
+- **Temporal context**: What's happening now vs. what happened before
+- **Behavioral patterns**: Recurring cycles, anomalies, trends
+- **Alignment**: Does this action match your stated values/goals?
+
+### What LifeOS Does NOT Reason About
+
+- **Your true desires** (it can probe, not decide)
+- **Moral judgments** (it surfaces tensions, doesn't resolve them)
+- **External world modeling** (no autonomous web scraping, no speculation)
+- **Other people's intentions** (respects epistemic boundaries)
 
 ---
 
-## Overview
+## Reasoning Layers
 
-LifeOS explicitly separates three types of reasoning, each with different computational properties, trust requirements, and explainability characteristics:
+```
+┌──────────────────────────────────────────────────────────────┐
+│  L3: INTENTIONAL GATING                                      │
+│      Human presence, consent, final authority                │
+│      → "Is this what I actually want?"                       │
+├──────────────────────────────────────────────────────────────┤
+│  L2: CONTEXTUAL INTERPRETATION                               │
+│      LLM/multimodal, probabilistic, expensive                │
+│      → "What does this mean? What pattern is emerging?"      │
+├──────────────────────────────────────────────────────────────┤
+│  L1: DEDUCTIVE RULES                                         │
+│      Symbolic, deterministic, cheap, explainable             │
+│      → "Given these facts, what follows?"                    │
+├──────────────────────────────────────────────────────────────┤
+│  L0: FACTS & GRAPH                                           │
+│      Solid pods, RDF triples, structured data                │
+│      → "What do I actually know?"                            │
+└──────────────────────────────────────────────────────────────┘
+```
 
-| Modality | Nature | Trust Model | Explainability |
-|----------|--------|-------------|----------------|
-| **Deductive** | Deterministic | Verifiable | Complete |
-| **Interpretive** | Probabilistic | Attributable | Partial |
-| **Intentional** | Human-anchored | Sovereign | Self-evident |
+### L0: Facts & Graph (Solid/RDF)
 
----
+The ground truth layer. Queryable, ownable, portable.
 
-## 1. Deductive Reasoning
+| Property | Value |
+|----------|-------|
+| Storage | Solid pod (user-controlled) |
+| Format | RDF triples, JSON-LD |
+| Trust | Verifiable (cryptographic proofs possible) |
+| Cost | Storage only, near-zero compute |
 
-### Definition
+### L1: Deductive Rules
 
-Deductive reasoning operates on **explicit facts, relationships, and rules**. Given the same inputs, it always produces the same outputs.
-
-### Characteristics
-
-- **Deterministic**: No randomness, no hallucination
-- **Symbolic**: Operates on structured data (RDF, graphs, ontologies)
-- **Lightweight**: Runs on any hardware, no GPU required
-- **Verifiable**: Every conclusion can be traced to premises
-- **W3C/Solid-aligned**: Uses standard web semantics
-
-### Examples in LifeOS
+Cheap, deterministic, fully explainable. **Default layer for all decisions.**
 
 ```
 IF presence.fatigue > 0.7 AND time.hour > 21
-THEN recommendation.defer_external_actions = true
+THEN flag.defer_external_actions = true
 ```
 
-```
-IF memory.pattern("late_night_emails").confidence > 0.8
-AND current_action.type = "send_email"
-THEN flag.requires_review = true
-```
+| Property | Value |
+|----------|-------|
+| Compute | Minimal (any CPU) |
+| Explainability | Complete (rule trace) |
+| Latency | Milliseconds |
+| Trust | Full (same inputs → same outputs) |
 
-### Implementation Layer
+### L2: Contextual Interpretation
 
-- Memory queries (STM/MTM/LTM retrieval)
-- Rule evaluation in Harmonia
-- Access control in Solid pods
-- Double Lock gate verification
+Invoked **only when L1 is insufficient**. Probabilistic, attributable, bounded.
+
+| Property | Value |
+|----------|-------|
+| Compute | Variable (GPU optional, local preferred) |
+| Explainability | Partial (model + input attribution) |
+| Latency | Seconds to minutes |
+| Trust | Conditional (confidence scores required) |
+
+**Key constraint**: L2 outputs are **never directly actionable**. They feed back into L1 for rule evaluation or escalate to L3 for human validation.
+
+### L3: Intentional Gating
+
+The irreducible human element. Only presence can authorize.
+
+| Property | Value |
+|----------|-------|
+| Compute | Human attention (scarce resource) |
+| Explainability | Self-evident (the human knows their intent) |
+| Latency | Variable (depends on human availability) |
+| Trust | Sovereign (only the user can validate) |
+
+**Double Lock**: External actions MUST pass through L3.
 
 ---
 
-## 2. Interpretive Reasoning
+## Cost Model
 
-### Definition
+### Why LifeOS Is Cheap by Default
 
-Interpretive reasoning generates **meaning, summaries, and perceptual understanding** from unstructured or ambiguous inputs. It is inherently probabilistic.
+| Operation | Layer | Cost |
+|-----------|-------|------|
+| Memory query | L0 | ~0 (storage lookup) |
+| Rule evaluation | L1 | ~0 (CPU milliseconds) |
+| Pattern detection | L1 | ~0 (graph traversal) |
+| Text summarization | L2 | $$ (LLM call) |
+| Voice transcription | L2 | $ (Whisper local) |
+| Human confirmation | L3 | Attention (priceless) |
 
-### Characteristics
+**Design principle**: Stay in L0/L1 as long as possible. Escalate to L2 only when necessary. Reserve L3 for external actions and ambiguous situations.
 
-- **Probabilistic**: Outputs vary, confidence scores required
-- **Multimodal**: Can process text, audio, images, sensor data
-- **Compute-intensive**: Benefits from GPU/NPU acceleration
-- **Attributable**: Source models and inputs must be logged
-- **Selective**: Invoked only when deduction is insufficient
+### Typical Flow
 
-### Examples in LifeOS
-
-```yaml
-interpretive_task:
-  input: "User's voice note from this morning"
-  output:
-    summary: "Expressed concern about project deadline"
-    emotional_tone: "anxious but determined"
-    confidence: 0.78
-    model_used: "local-whisper-v3"
 ```
-
-```yaml
-interpretive_task:
-  input: "Three days of activity patterns"
-  output:
-    insight: "Working hours extending, breaks decreasing"
-    pattern_type: "burnout_early_warning"
-    confidence: 0.65
+95% of operations:  L0 → L1 → Done        (free)
+4% of operations:   L0 → L1 → L2 → L1     (local compute)  
+1% of operations:   L0 → L1 → L2 → L3     (human attention)
 ```
-
-### Implementation Layer
-
-- SenseMaking frame generation
-- Presence state inference
-- Memory consolidation significance scoring
-- Natural language understanding
-
-### Trust Boundary
-
-Interpretive outputs are **never directly actionable**. They must pass through:
-
-1. SenseMaking synthesis (multiple hypotheses)
-2. Harmonia deliberation (alignment scoring)
-3. Double Lock verification (human confirmation for external actions)
 
 ---
 
-## 3. Intentional Reasoning
+## Explainability Guarantees
 
-### Definition
+Every LifeOS decision can answer these questions:
 
-Intentional reasoning concerns **why now, for whom, and toward what end**. It is anchored in human presence and cannot be fully automated.
+| Question | Layer | Answer Source |
+|----------|-------|---------------|
+| **What** facts were used? | L0 | RDF graph query log |
+| **Why** this conclusion? | L1 | Rule trace (premises → conclusion) |
+| **Who** interpreted this? | L2 | Model ID + input hash |
+| **When** was this decided? | L3 | Presence timestamp + consent log |
 
-### Characteristics
+### The Explainable Web (Not XAI)
 
-- **Human-anchored**: Requires active presence confirmation
-- **Contextual**: Same action may be right or wrong depending on intent
-- **Sovereign**: Only the human can ultimately validate intent
-- **Self-evident**: The human knows their own intention (even if imperfectly)
+LifeOS does not try to "explain" neural networks. Instead:
 
-### Examples in LifeOS
+- L0/L1 are **natively explainable** (symbolic, deterministic)
+- L2 is **attributable** (logged inputs, model versions, confidence)
+- L3 is **self-evident** (the human was present and consented)
 
-```yaml
-intentional_question:
-  situation: "User wants to send late-night email"
-  deductive_input: "Fatigue high, pattern suggests regret likely"
-  interpretive_input: "Emotional tone suggests anxiety-driven"
-  
-  intentional_probe:
-    question: "Is this truly urgent, or is it the part of you that can't stop?"
-    options:
-      - "Send now (I've decided it's time-sensitive)"
-      - "Schedule for tomorrow (let me review when fresh)"
-      - "Remind me tomorrow (I'll decide then)"
-```
-
-### Implementation Layer
-
-- Presence Loop validation
-- Harmonia option presentation
-- Double Lock human confirmation
-- Final action authorization
-
-### The Irreducible Human Element
-
-Intentional reasoning cannot be replaced by prediction:
-
-- A model can predict what the user *will likely do*
-- Only the user can decide what they *should do*
-
-LifeOS preserves this gap by design.
-
----
-
-## Architectural Separation
-
-### Why Separation Matters
-
-| Problem | Without Separation | With Separation |
-|---------|-------------------|-----------------|
-| Hallucination | Spreads to decisions | Contained in interpretive layer |
-| Unexplainability | Entire system opaque | Deductive core remains transparent |
-| Sovereignty loss | AI decides intent | Human retains final authority |
-| Compute dependency | Everything needs GPU | Core runs anywhere |
-
-### Data Flow
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        INTENTIONAL                              │
-│                    (Human-anchored)                             │
-│         "Is this what I actually want to do?"                   │
-│                           │                                     │
-│                           ▼                                     │
-│  ┌─────────────────────────────────────────────────────────┐   │
-│  │                    INTERPRETIVE                          │   │
-│  │                   (Probabilistic)                        │   │
-│  │    "What does this mean? What pattern is emerging?"      │   │
-│  │                           │                              │   │
-│  │                           ▼                              │   │
-│  │  ┌─────────────────────────────────────────────────┐    │   │
-│  │  │                  DEDUCTIVE                       │    │   │
-│  │  │                (Deterministic)                   │    │   │
-│  │  │     "Given these facts, what follows?"           │    │   │
-│  │  │                                                  │    │   │
-│  │  │   Facts → Rules → Conclusions                    │    │   │
-│  │  └─────────────────────────────────────────────────┘    │   │
-│  └─────────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────────┘
-```
-
-### Trust Propagation
-
-- **Deductive outputs**: Fully trusted (verifiable)
-- **Interpretive outputs**: Conditionally trusted (attributable, bounded confidence)
-- **Intentional validation**: Sovereign (only human can confirm)
-
----
-
-## Implications for Implementation
-
-### What Runs Where
-
-| Reasoning Type | Compute Requirement | Deployment |
-|---------------|---------------------|------------|
-| Deductive | Minimal (CPU) | Edge, Pod, anywhere |
-| Interpretive | Variable (GPU optional) | Local or selective cloud |
-| Intentional | Human attention | User interface |
-
-### Explainability Guarantees
-
-| Layer | Audit Question | Answer Source |
-|-------|---------------|---------------|
-| Deductive | "Why this conclusion?" | Rule trace |
-| Interpretive | "Where did this insight come from?" | Model + input attribution |
-| Intentional | "Who decided this?" | Presence + consent log |
+This is **structural transparency**, not post-hoc explanation.
 
 ---
 
 ## Summary
 
-LifeOS reasoning is not a monolithic "AI brain." It is a **layered architecture** where:
-
-1. **Deduction** provides the verifiable foundation
-2. **Interpretation** augments with probabilistic meaning
-3. **Intention** remains with the human
-
-This separation is not a limitation — it is the **source of sovereignty**.
+| Layer | Nature | Cost | Trust |
+|-------|--------|------|-------|
+| L0 | Facts | Free | Verifiable |
+| L1 | Rules | Free | Deterministic |
+| L2 | Interpretation | Variable | Attributable |
+| L3 | Intention | Attention | Sovereign |
 
 ```
 "Logic grounds decisions. Intelligence augments meaning. Intent remains human."
@@ -243,5 +171,5 @@ This separation is not a limitation — it is the **source of sovereignty**.
 
 ---
 
-**Document version:** 0.1  
+**Document version:** 0.2  
 **Last updated:** December 2025
