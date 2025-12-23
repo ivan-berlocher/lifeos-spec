@@ -1,0 +1,174 @@
+# LifeOS Specification
+
+> **"A distributed cognitive architecture for human sovereignty in the age of AI"**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Spec Version](https://img.shields.io/badge/spec-v0.1-blue.svg)](./spec/00-overview.md)
+
+---
+
+## 🌍 Vision
+
+LifeOS is not another AI assistant. It's a **specification** for building cognitive systems that:
+
+- **Remember** with intention, not accumulation
+- **Think** alongside humans, not instead of them
+- **Act** only with explicit human authorization
+- **Distribute** power across a global federation, not centralize it
+
+```
+"Pas de centre. Pas de maître."
+"No center. No master."
+```
+
+---
+
+## 📐 What is this repository?
+
+This is the **formal specification** of LifeOS — like an RFC for cognitive architecture.
+
+| What it IS | What it is NOT |
+|------------|----------------|
+| A specification anyone can implement | A product you can download |
+| A philosophy made computable | A startup pitch |
+| Open standards for cognitive sovereignty | A GAFAM competitor |
+| A blueprint for regional infrastructure | A centralized platform |
+
+---
+
+## 🏗️ Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│                    🌍 GLOBAL FEDERATION OF COGNITIVE SOVEREIGNTIES 🌍        │
+│                                                                             │
+│     ┌───────────┐         ┌───────────┐         ┌───────────┐              │
+│     │ Cluster A │◄───────►│ Cluster B │◄───────►│ Cluster C │              │
+│     │ (Region)  │         │ (Region)  │         │ (Region)  │              │
+│     └─────┬─────┘         └─────┬─────┘         └─────┬─────┘              │
+│           │                     │                     │                     │
+│           ▼                     ▼                     ▼                     │
+│     ┌───────────────────────────────────────────────────────────────┐      │
+│     │                    SOLID-COMPATIBLE PODS                       │      │
+│     │   👤 Pod    👤 Pod    👤 Pod    👤 Pod    👤 Pod               │      │
+│     │   User owns their data. Apps come to the data.                 │      │
+│     └───────────────────────────────────────────────────────────────┘      │
+│                                     │                                       │
+│                                     ▼                                       │
+│     ┌───────────────────────────────────────────────────────────────┐      │
+│     │               FEDERATED MODEL LAYER                            │      │
+│     │   Models are portable. Downloaded. Run locally.                │      │
+│     │   Like HuggingFace, but for cognitive agents.                  │      │
+│     └───────────────────────────────────────────────────────────────┘      │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📚 Specification Index
+
+| Document | Description |
+|----------|-------------|
+| [00-overview](./spec/00-overview.md) | High-level architecture |
+| [01-kernel](./spec/01-kernel.md) | Presence × Memory × Action — the core law |
+| [02-memory-os](./spec/02-memory-os.md) | Memory architecture (STM/MTM/LTM) |
+| [03-sense-making](./spec/03-sense-making.md) | SenseMaking as computable object |
+| [04-harmonia](./spec/04-harmonia.md) | Cognitive orchestration layer |
+| [05-solid-bridge](./spec/05-solid-bridge.md) | Integration with Solid Protocol |
+| [06-federation](./spec/06-federation.md) | P2P distributed infrastructure |
+| [07-agents](./spec/07-agents.md) | Agent architecture & governance |
+
+---
+
+## 🔑 Core Principles
+
+### 1. Presence Loop — The Sovereign Authority
+
+> No memory, no action, no agent operates without stable human presence.
+
+```
+Presence Loop
+    ↓ authorizes
+MemoryOS
+    ↓ feeds
+Agent Orchestration
+    ↓ proposes
+ActionOS
+    ↓ executes
+Reality
+```
+
+**No arrow goes back up without passing through Presence Loop.**
+
+### 2. SenseMaking — The Computable Process
+
+> Transform fragmented signals into meaningful structure, with traceable interpretive decisions.
+
+```
+SCANNING → NOTICING → INTERPRETING → DECIDING → ENACTING
+    ↑                                              │
+    └──────────────── feedback ────────────────────┘
+```
+
+### 3. Double Lock — Cognitive Flow
+
+> AI proposes. Human decides. Twice.
+
+| Lock | Name | Question |
+|------|------|----------|
+| 1 | Cognitive | "What is this, really?" |
+| 2 | Authorization | "Do you want me to execute?" |
+
+### 4. Water Model — Infrastructure Financing
+
+> Like water or electricity: essential public service, regional infrastructure, financed by usage.
+
+```
+User ─── subscription ───► Regional Cluster ───► Local reinvestment
+  ◄─── cognitive services ────────────────────────────────────────┘
+```
+
+---
+
+## 🤝 Related Projects
+
+| Project | Relationship |
+|---------|--------------|
+| [Solid](https://solidproject.org/) | Data sovereignty protocol — LifeOS is Solid-compatible |
+| [HuggingFace](https://huggingface.co/) | Model registry inspiration |
+| [IPFS](https://ipfs.io/) | Distributed storage layer option |
+
+---
+
+## 🚀 Getting Started
+
+### For Readers
+Start with [00-overview](./spec/00-overview.md), then read based on interest.
+
+### For Implementers
+See [lifeos-starter](https://github.com/ivan-berlocher/lifeos-starter) (coming soon) for a minimal reference implementation.
+
+### For Contributors
+1. Read the [Philosophy](./PHILOSOPHY.md)
+2. Open an issue for discussion
+3. Submit PRs for spec improvements
+
+---
+
+## 📜 License
+
+MIT License — Build freely, attribute kindly.
+
+---
+
+## 👤 Author
+
+**Ivan Berlocher** — Building cognitive sovereignty, one spec at a time.
+
+> *"Papa est là pour leur montrer que l'on redeviendra maître de nos données, idées."*
+
+---
+
+*"Think different. Just do it."*

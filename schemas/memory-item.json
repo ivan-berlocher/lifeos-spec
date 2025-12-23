@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lifeos.dev/schemas/memory-item.json",
+  "title": "MemoryItem",
+  "description": "A structured memory item in LifeOS MemoryOS",
+  "type": "object",
+  "required": ["id", "type", "version", "essence", "createdAt", "source", "consent"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for this memory item"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["EPHEMERAL", "WORKING", "FACT", "NARRATIVE", "RELATIONAL", "REFLECTIVE"],
+      "description": "Category of memory determining lifecycle and behavior"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Version number, incremented on each update"
+    },
+    "essence": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000,
+      "description": "Core meaning of this memory (required)"
+    },
+    "details": {
+      "description": "Full content of the memory (optional, type varies)"
+    },
+    "conceptualSignature": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Key concepts for semantic matching"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this memory was first created"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this memory was last updated"
+    },
+    "accessedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this memory was last accessed"
+    },
+    "ttl": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Time-to-live - when this memory should be dissolved (null = indefinite)"
+    },
+    "source": {
+      "type": "object",
+      "required": ["type", "id", "timestamp"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["user", "system", "agent", "external"],
+          "description": "Origin category of this memory"
+        },
+        "id": {
+          "type": "string",
+          "description": "Identifier of the source entity"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the source created this memory"
+        }
+      }
+    },
+    "consent": {
+      "type": "object",
+      "required": ["givenAt", "type", "revocable"],
+      "properties": {
+        "givenAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When consent was given"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["explicit", "implicit", "inherited", "system"],
+          "description": "How consent was obtained"
+        },
+        "scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "What operations are consented"
+        },
+        "revocable": {
+          "type": "boolean",
+          "description": "Whether user can revoke this consent"
+        }
+      }
+    },
+    "accessControl": {
+      "type": "object",
+      "properties": {
+        "owner": {
+          "type": "string",
+          "description": "User ID of the memory owner"
+        },
+        "grants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AccessGrant"
+          }
+        },
+        "defaultPolicy": {
+          "type": "string",
+          "enum": ["deny", "allow_read", "allow_write"],
+          "default": "deny"
+        }
+      }
+    },
+    "relatedTo": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "IDs of related memory items"
+    },
+    "derivedFrom": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "IDs of source memories this was derived from"
+    },
+    "supersedes": {
+      "type": ["string", "null"],
+      "format": "uuid",
+      "description": "ID of the previous version this supersedes"
+    }
+  },
+  "$defs": {
+    "AccessGrant": {
+      "type": "object",
+      "required": ["grantee", "permissions"],
+      "properties": {
+        "grantee": {
+          "type": "string",
+          "description": "ID of the entity receiving access"
+        },
+        "permissions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["read", "write", "delete", "share"]
+          }
+        },
+        "scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "validUntil": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["time", "location", "purpose", "approval"]
+              },
+              "value": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}
