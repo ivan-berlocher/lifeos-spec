@@ -190,7 +190,7 @@
       
       <rect x="20" y="70" width="120" height="50" rx="6" fill="#312E81" stroke="#4F46E5" stroke-width="1"/>
       <text x="80" y="92" text-anchor="middle" font-family="monospace" font-size="10" fill="#A5B4FC">/pod/lifeos/memory/</text>
-      <text x="80" y="108" text-anchor="middle" font-family="monospace" font-size="9" fill="#818CF8">encrypted & sovereign</text>
+      <text x="80" y="108" text-anchor="middle" font-family="monospace" font-size="9" fill="#818CF8">encrypted &amp; sovereign</text>
     </g>
   </g>
   
