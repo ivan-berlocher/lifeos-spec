@@ -147,6 +147,134 @@ This is **structural transparency**, not post-hoc explanation.
 
 ---
 
+## Reasoning Examples (Anonymized)
+
+The following examples are illustrative and anonymized.
+They demonstrate how LifeOS separates facts, deductions, interpretations, and intentional decisions.
+
+### Example 1 — Family Context
+
+**Actors**: Person A (adult), Person B (adult), Person C (child), Person D (child)
+
+#### L0 — Facts (Symbolic / Solid layer)
+
+Explicit, inspectable facts stored as linked data:
+
+```turtle
+:personA a foaf:Person .
+:personB a foaf:Person .
+:personC a foaf:Person .
+:personD a foaf:Person .
+
+:personA rel:spouseOf :personB .
+:personA rel:parentOf :personC, :personD .
+:personB rel:parentOf :personC, :personD .
+```
+
+✓ Deterministic · ✓ Low cost · ✓ Portable
+
+#### L1 — Deductive Reasoning (Rule-based)
+
+Simple rules applied incrementally:
+
+| Rule | Derived Fact |
+|------|--------------|
+| `parentOf ⇒ inverse childOf` | `personC childOf personA` |
+| `shared parents ⇒ siblingOf` | `personC siblingOf personD` |
+
+✓ No probabilistic inference · ✓ Fully explainable
+
+#### L2 — Contextual Interpretation
+
+Based on lived context and temporal signals:
+- Repeated joint events
+- Recent activity patterns  
+- Role-specific interactions
+
+> *"The relationship between Person A and Person C is currently focused on academic support."*
+
+✓ Not stored as fact · ✓ Versioned · ✓ Marked as interpretation
+
+#### L3 — Intentional Decision (Presence layer)
+
+| Context | Value |
+|---------|-------|
+| Active role | Parent |
+| Situation | Upcoming evaluation |
+| Temporal proximity | Short-term |
+
+**Decision**: *"Surface a supportive memory related to Person C."*
+
+**Explainability audit**:
+- **What**: A reminder was suggested
+- **Why**: Contextual interpretation + parental role
+- **Who**: Active user (Person A)
+- **When**: Time-sensitive context
+
+---
+
+### Example 2 — Professional / Research Context
+
+**Actors**: Person E (primary author), Person F (peer/reviewer), Project X, Event Y (deadline)
+
+#### L0 — Facts
+
+```turtle
+:personE a foaf:Person .
+:personF a foaf:Person .
+:projectX a schema:Project .
+:eventY a schema:Event .
+
+:personE schema:worksOn :projectX .
+:personF schema:collaboratesWith :personE .
+:eventY schema:about :projectX .
+```
+
+#### L1 — Deduction
+
+| Rule | Result |
+|------|--------|
+| `collaboratesWith ⇒ professional relationship` | Inferred |
+| Family/emotional roles | **Not inferred** (out of scope) |
+
+#### L2 — Interpretation
+
+Observed signals: technical exchanges, semantic discussions, critical feedback loops.
+
+> *"Person F acts as a critical semantic reference for Project X."*
+
+✓ Contextual, not absolute · ✓ Justified by observable signals
+
+#### L3 — Intentional Decision
+
+| Context | Value |
+|---------|-------|
+| Activity | Editing reasoning section |
+| Target audience | Semantic reviewers |
+
+**Decision**: *"Review this section using Person F's perspective."*
+
+**Explainability audit**:
+- **What**: Targeted review suggestion
+- **Why**: Audience alignment
+- **Who**: Active editor (Person E)
+- **When**: Pre-publication phase
+
+---
+
+### Why These Examples Matter
+
+| Principle | Guarantee |
+|-----------|-----------|
+| Facts remain neutral and portable | L0 is reusable across contexts |
+| Deductions are cheap and deterministic | L1 scales without compute cost |
+| Interpretations are explicit and revisable | L2 never masquerades as fact |
+| Decisions are attributable and explainable | L3 creates audit trail |
+
+> **Explainability is not added after the fact. It is structured into the system.**
+
+---
+
 ## Summary
 
 | Layer | Nature | Cost | Trust |
@@ -171,5 +299,5 @@ This is **structural transparency**, not post-hoc explanation.
 
 ---
 
-**Document version:** 0.2  
+**Document version:** 0.3  
 **Last updated:** December 2025
