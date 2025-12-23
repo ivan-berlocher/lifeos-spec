@@ -3,7 +3,7 @@
 **Specification Document v0.1**
 
 **Author:** Ivan Berlocher  
-**Date:** December 2024  
+**Date:** December 2025  
 **Repository:** https://github.com/ivan-berlocher/lifeos-spec  
 **License:** MIT
 
@@ -371,5 +371,5 @@ This example demonstrates how a simple intention ("send an email") is processed 
 ---
 
 **Document version:** 0.1  
-**Last updated:** December 2024  
+**Last updated:** December 2025  
 **DOI:** 10.5281/zenodo.XXXXXXX (pending)

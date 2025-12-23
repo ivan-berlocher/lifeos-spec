@@ -191,10 +191,10 @@ MIT License — Build freely, attribute kindly.
 If you use LifeOS in academic work, please cite:
 
 ```bibtex
-@software{googma2024lifeos,
-  author       = {Googma, Ivan},
+@software{berlocher2025lifeos,
+  author       = {Berlocher, Ivan},
   title        = {{LifeOS: A Distributed Cognitive Architecture for Human Sovereignty in the Age of AI}},
-  year         = {2024},
+  year         = {2025},
   version      = {v0.1},
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.XXXXXXX},
