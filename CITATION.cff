@@ -3,7 +3,7 @@ message: "If you use this specification, please cite it as below."
 type: software
 title: "LifeOS: A Distributed Cognitive Architecture for Human Sovereignty in the Age of AI"
 version: 0.1.0
-date-released: 2024-12-23
+date-released: 2025-12-23
 authors:
   - family-names: "Berlocher"
     given-names: "Ivan"
