@@ -110,6 +110,13 @@ This is the **formal specification** of LifeOS — like an RFC for cognitive arc
 | [06-federation](./spec/06-federation.md) | P2P distributed infrastructure |
 | [07-agents](./spec/07-agents.md) | Agent architecture & governance |
 
+### Entry point for Web architects
+
+If you come from the **Web architecture / W3C / TAG** world and want the shortest path in:
+
+- Start with the **LLAT Architecture Note**: [docs/llat-architecture-note.md](./docs/llat-architecture-note.md)
+- Then, if needed, see the more detailed exploratory spec: [spec/08-llat.md](./spec/08-llat.md)
+
 ### Deep Dives
 
 | Document | Description |
