@@ -4,7 +4,7 @@ type: software
 title: "LifeOS: A Distributed Cognitive Architecture for Human Sovereignty in the Age of AI"
 version: 0.3.0
 date-released: 2025-12-24
-doi: 10.5281/zenodo.18043802
+doi: 10.5281/zenodo.18028496
 authors:
   - family-names: "Berlocher"
     given-names: "Ivan"
