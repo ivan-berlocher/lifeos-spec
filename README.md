@@ -91,9 +91,9 @@ This is the **formal specification** of LifeOS — like an RFC for cognitive arc
 
 ## 🏗️ Architecture Overview
 
-![Global Federation Architecture](assets/global-federation.png)
+![Intent-to-Action Web Stack (L0–L8)](assets/llat-layers.svg)
 
-> *Vector version: [SVG](assets/global-federation.svg)*
+> Figure — Intent-to-Action Web Stack (L0–L8). See LLAT details in [docs/llat-architecture-note.md](./docs/llat-architecture-note.md) and [spec/08-llat.md](./spec/08-llat.md).
 
 ---
 
