@@ -66,6 +66,8 @@ LLAT aims to standardize a small set of **core objects** that any agent/tool eco
 
 > Names and structures below are *illustrative* rather than normative.
 
+The term "life" refers to documents that carry lived facts, intent, memory, and responsibility over time — not merely data or representation.
+
 ### 3.1 Intent
 
 An **Intent** is a structured representation of what the human is trying to achieve.
