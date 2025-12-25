@@ -247,6 +247,11 @@ The concrete vocabulary (`llat:Intent`, `llat:ActionProposal`, etc.) is provisio
 }
 ```
 
+In one sentence:
+
+> HTML standardised how documents are displayed.  
+> .life standardises how documents carry meaning, memory, and responsibility.
+
 - The **Intent** captures the human’s goal in natural language plus a normalized `llat:goal`.
 - The **ActionProposal** specifies a concrete, reversible action (`llat:SendEmail`) scoped to a particular target.
 - The **ExecutionTrace** records when authorization was given and which concrete steps (tools) realized the proposal.

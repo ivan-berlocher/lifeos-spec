@@ -95,6 +95,9 @@ This is the **formal specification** of LifeOS — like an RFC for cognitive arc
 
 > Figure — Intent-to-Action Web Stack (L0–L9). See LLAT details in [docs/llat-architecture-note.md](./docs/llat-architecture-note.md) and [spec/08-llat.md](./spec/08-llat.md).
 
+> HTML standardised how documents are displayed.  
+> .life standardises how documents carry meaning, memory, and responsibility.
+
 ---
 
 ## 📚 Specification Index

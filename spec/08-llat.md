@@ -115,6 +115,11 @@ LLAT focuses specifically on:
 - The **boundary** between L5 (personal context) and L6 (agent/tool invocation)
 - A **vendor‑neutral, Web‑native vocabulary** for intents, proposed actions, and execution traces
 
+As a useful analogy:
+
+> HTML standardised how documents are displayed.  
+> .life standardises how documents carry meaning, memory, and responsibility.
+
 Solid remains the **data substrate**; LLAT aims to be the **action substrate**.
 
 ---
