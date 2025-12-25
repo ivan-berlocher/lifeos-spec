@@ -32,54 +32,17 @@ This document is **not** a formal W3C specification. It is written in a W3C‑co
 
 ---
 
-## 2. Layered Model (L0 → L8)
+## 2. Layered Model (L0 → L9)
 
 The Intent‑to‑Action Web can be described as a stack of layers.
 The goal is to be **as clear as TCP/IP → HTTP → HTML**, but for **intent and action**.
 
-```text
-┌────────────────────────────────────────────────────────────────────────────┐
-│ L8: PRESENCE & GOVERNANCE (Human Level)                                   │
-│     • Human consent, norms, responsibilities                               │
-│     • Double‑lock execution policies                                      │
-├────────────────────────────────────────────────────────────────────────────┤
-│ L7: LANGUAGE‑LEVEL ACTION TRANSPORT (LLAT)                                │
-│     • Intents, action proposals, traces                                   │
-│     • Human‑legible + machine‑checkable representations                   │
-│     • Independent of any single vendor protocol                           │
-├────────────────────────────────────────────────────────────────────────────┤
-│ L6: AGENT / TOOL INVOCATION                                               │
-│     • Protocols for calling tools/agents (e.g. MCP, plugins, functions)   │
-│     • Capability manifests, tool schemas                                  │
-├────────────────────────────────────────────────────────────────────────────┤
-│ L5: PERSONAL CONTEXT & MEMORY                                             │
-│     • User‑centric knowledge graph                                        │
-│     • Patterns, preferences, local reasoning state                        │
-├────────────────────────────────────────────────────────────────────────────┤
-│ L4: PODS & IDENTITY                                                       │
-│     • Solid pods, WebID‑OIDC, ACL/ACP                                     │
-│     • Where personal data and profiles live                               │
-├────────────────────────────────────────────────────────────────────────────┤
-│ L3: LINKED DATA WEB                                                       │
-│     • RDF, JSON‑LD, vocabularies                                          │
-│     • URIs as global identifiers                                          │
-├────────────────────────────────────────────────────────────────────────────┤
-│ L2: REPRESENTATION & APPLICATION PROTOCOLS                                │
-│     • HTTP(S), WebSocket, gRPC‑Web                                        │
-│     • HTML, JSON, binary formats                                          │
-├────────────────────────────────────────────────────────────────────────────┤
-│ L1: TRANSPORT & SECURITY                                                  │
-│     • TCP/UDP, TLS, QUIC                                                 │
-├────────────────────────────────────────────────────────────────────────────┤
-│ L0: NETWORK & HARDWARE                                                    │
-│     • Physical network, devices, sensors                                  │
-└────────────────────────────────────────────────────────────────────────────┘
-```
+![Intent‑to‑Action Web Stack (L0–L9)](../assets/llat-layers-l0-l9.svg)
 
-**Figure 1 — Intent‑to‑Action Web Stack (L0–L8).**  
-Rendered diagram available as SVG and PNG in this repository:
-- `assets/llat-layers.svg` (source)
-- `assets/llat-layers.png` (for slide decks and PDFs)
+**Figure 1 — Intent‑to‑Action Web Stack (L0–L9).**  
+Rendered diagram available as SVG in this repository:
+- `assets/llat-layers-l0-l9.svg` (source, preferred)
+- `assets/llat-layers.png` (earlier L0–L8 export, kept for legacy slide decks)
 
 ### 2.1 Roles of L7 and L8
 

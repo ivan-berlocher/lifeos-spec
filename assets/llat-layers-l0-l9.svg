@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="1180" viewBox="0 0 960 1180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .layer-box { stroke: #1f2933; stroke-width: 2; rx: 8; ry: 8; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 18px; font-weight: 600; fill: #111827; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; fill: #374151; }
+      .caption { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; fill: #4b5563; }
+      .heading { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 24px; font-weight: 700; fill: #111827; }
+      .tagline { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; fill: #4b5563; }
+      .bg-low { fill: #f3f4f6; }
+      .bg-proto { fill: #e5e7eb; }
+      .bg-linked { fill: #f9fafb; }
+      .bg-pod { fill: #f5f3ff; }
+      .bg-contract { fill: #ecfdf5; }
+      .bg-doc { fill: #e0f2fe; }
+      .bg-editor { fill: #eff6ff; }
+      .bg-runtime { fill: #fef3c7; }
+      .bg-action { fill: #fefce8; }
+    ]]></style>
+  </defs>
+
+  <!-- Title -->
+  <text x="480" y="50" text-anchor="middle" class="heading">Intent-to-Action Web Stack (L0–L9)</text>
+  <text x="480" y="75" text-anchor="middle" class="tagline">Meaning → Interpretation → Action on top of the existing Web</text>
+
+  <!-- Layout: 10 layers, height 80, gap 8, start y=110 -->
+
+  <!-- L9c: Presence & Governance -->
+  <rect x="120" y="110" width="720" height="80" class="layer-box bg-action" />
+  <text x="140" y="135" class="title">L9c — Presence &amp; Governance (Human Level)</text>
+  <text x="140" y="158" class="subtitle">Human consent, norms, final authority</text>
+  <text x="140" y="178" class="caption">• Double-lock execution • Ethics, legal constraints, long-term responsibility</text>
+
+  <!-- L9b: LLAT -->
+  <rect x="120" y="198" width="720" height="80" class="layer-box bg-action" />
+  <text x="140" y="223" class="title">L9b — Language-Level Action Transport (LLAT)</text>
+  <text x="140" y="246" class="subtitle">Intents, action proposals, execution traces</text>
+  <text x="140" y="266" class="caption">• Human-legible + machine-checkable • Vendor-neutral action contracts</text>
+
+  <!-- L9a: Agent / Tool Invocation -->
+  <rect x="120" y="286" width="720" height="80" class="layer-box bg-action" />
+  <text x="140" y="311" class="title">L9a — Agent / Tool Invocation</text>
+  <text x="140" y="334" class="subtitle">MCP, plugins, function calling, HTTP APIs</text>
+  <text x="140" y="354" class="caption">• Tool manifests &amp; schemas • Orchestration between models and services</text>
+
+  <!-- L8: Interpreter / Runtime -->
+  <rect x="120" y="374" width="720" height="80" class="layer-box bg-runtime" />
+  <text x="140" y="399" class="title">L8 — Interpreter / Runtime Layer</text>
+  <text x="140" y="422" class="subtitle">Life runtime: interpret, check, replay, explain</text>
+  <text x="140" y="442" class="caption">• Enforces cognitive invariants • Prepares action proposals, no direct execution</text>
+
+  <!-- L7: Editor / Viewer -->
+  <rect x="120" y="462" width="720" height="80" class="layer-box bg-editor" />
+  <text x="140" y="487" class="title">L7 — Editor / Viewer Layer</text>
+  <text x="140" y="510" class="subtitle">Human &amp; agent editors for Life Documents</text>
+  <text x="140" y="530" class="caption">• Read/write views (timeline, narrative, graph) • Cannot violate L5 invariants • No execution authority</text>
+
+  <!-- L6: Life Document Layer -->
+  <rect x="120" y="550" width="720" height="80" class="layer-box bg-doc" />
+  <text x="140" y="575" class="title">L6 — Life Document Layer</text>
+  <text x="140" y="598" class="subtitle">Structured cognitive documents (e.g. .life)</text>
+  <text x="140" y="618" class="caption">• Decisions, memory, intent, references • One embodiment of the L5 contract</text>
+
+  <!-- L5: Cognitive Contract Layer -->
+  <rect x="120" y="638" width="720" height="80" class="layer-box bg-contract" />
+  <text x="140" y="663" class="title">L5 — Cognitive Contract Layer</text>
+  <text x="140" y="686" class="subtitle">Minimal, normative contract for meaning and traceability</text>
+  <text x="140" y="706" class="caption">• Explicit meaning • Temporal continuity &amp; memory • Decision traceability • No implicit action</text>
+
+  <!-- L4: Pods, Storage & Identity -->
+  <rect x="120" y="726" width="720" height="80" class="layer-box bg-pod" />
+  <text x="140" y="751" class="title">L4 — Pods, Storage &amp; Identity</text>
+  <text x="140" y="774" class="subtitle">Solid Pods, WebID-OIDC, ACL/ACP</text>
+  <text x="140" y="794" class="caption">• User-owned data &amp; profiles • Access control, portability, decentralization</text>
+
+  <!-- L3: Linked Data & Global Identifiers -->
+  <rect x="120" y="814" width="720" height="80" class="layer-box bg-linked" />
+  <text x="140" y="839" class="title">L3 — Linked Data &amp; Global Identifiers</text>
+  <text x="140" y="862" class="subtitle">RDF, JSON-LD, vocabularies</text>
+  <text x="140" y="882" class="caption">• URIs as global identifiers • Graph of descriptive facts</text>
+
+  <!-- L2: Representation & Application Protocols -->
+  <rect x="120" y="902" width="720" height="80" class="layer-box bg-proto" />
+  <text x="140" y="927" class="title">L2 — Representation &amp; Application Protocols</text>
+  <text x="140" y="950" class="subtitle">HTTP(S), WebSocket, gRPC-Web; HTML, JSON, binary formats</text>
+  <text x="140" y="970" class="caption">• Generic Web transport &amp; representation • No semantic guarantees</text>
+
+  <!-- L1: Transport & Security -->
+  <rect x="120" y="990" width="720" height="80" class="layer-box bg-low" />
+  <text x="140" y="1015" class="title">L1 — Transport &amp; Security</text>
+  <text x="140" y="1038" class="subtitle">TCP, UDP, TLS, QUIC</text>
+  <text x="140" y="1058" class="caption">• Reliable streams, secure channels</text>
+
+  <!-- L0: Network & Hardware -->
+  <rect x="120" y="1078" width="720" height="80" class="layer-box bg-low" />
+  <text x="140" y="1103" class="title">L0 — Network &amp; Hardware</text>
+  <text x="140" y="1126" class="subtitle">Physical network, devices, sensors</text>
+  <text x="140" y="1146" class="caption">• Substrate everything runs on</text>
+
+  <!-- Side labels for key technologies (illustrative) -->
+  <text x="850" y="760" class="caption" text-anchor="start">Solid</text>
+  <text x="850" y="850" class="caption" text-anchor="start">RDF / JSON-LD</text>
+  <text x="850" y="320" class="caption" text-anchor="start">MCP / plugins / APIs</text>
+  <text x="850" y="240" class="caption" text-anchor="start">LLAT</text>
+
+</svg>
