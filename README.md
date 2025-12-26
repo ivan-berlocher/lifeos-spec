@@ -1,24 +1,9 @@
 # LifeOS Specification
 
-> **A presence-oriented cognitive architecture grounded in symbolic reasoning and augmented by selective, accelerated intelligence.**
+> **"A distributed cognitive architecture for human sovereignty in the age of AI"**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Spec Version](https://img.shields.io/badge/spec-v0.2-blue.svg)](./spec/00-overview.md)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18028496.svg)](https://doi.org/10.5281/zenodo.18028496)
-
----
-
-## 📖 Abstract
-
-**LifeOS** is a formal specification for building cognitive systems that preserve human authority over memory, interpretation, and action. It defines a normative architecture composed of:
-
-- A **cognitive kernel** enforcing the law `Presence × Memory × Action`
-- **Memory subsystems** (STM/MTM/LTM) with intentional consolidation
-- **SenseMaking** as a computable interpretive object
-- **Harmonia**, the cognitive orchestration layer transforming intent into coordinated agent proposals under the **Double Lock** governance mechanism
-- **Distributed infrastructure** principles for federated, sovereign deployment
-
-This specification is implementation-agnostic and designed to support academic research, regional infrastructure projects, and sovereign AI initiatives.
+[![Spec Version](https://img.shields.io/badge/spec-v0.1-blue.svg)](./spec/00-overview.md)
 
 ---
 
@@ -38,44 +23,6 @@ LifeOS is not another AI assistant. It's a **specification** for building cognit
 
 ---
 
-## 🧠 Architectural Vision
-
-LifeOS explicitly separates **symbolic reasoning** from **perceptual and interpretative intelligence**.
-
-| Layer | Nature | Role |
-|-------|--------|------|
-| **Symbolic reasoning** | Deterministic, explainable, lightweight | Operates on structured facts, relationships, and rules (W3C / Solid-aligned) |
-| **Perceptual intelligence** | Probabilistic, multimodal, compute-intensive | Invoked selectively to generate meaning, summaries, and presence |
-
-**LifeOS does not conflate logic and intelligence.**
-
-- Logic grounds decisions
-- Intelligence augments meaning
-
-This separation enables sovereign deployment: symbolic layers run anywhere, neural acceleration is invoked only when needed and authorized.
-
-### Explainability by Design
-
-LifeOS is an **Explainable Web** system — not merely Explainable AI.
-
-| Approach | Explains |
-|----------|----------|
-| **XAI** (Explainable AI) | A model's outputs |
-| **Explainable Web** | A system's decisions |
-
-Facts, relations, and decisions remain **inspectable and attributable** across all layers:
-
-- **What** was decided (action trace)
-- **Why** it was decided (justification trace — see [SenseMaking](./spec/03-sense-making.md))
-- **Who** authorized it (consent trace — see [Double Lock](./spec/04-harmonia.md#the-double-lock))
-- **When** and under what presence state
-
-Deterministic layers remain auditable; probabilistic layers remain attributable.
-
-> *LifeOS extends the Web from explainable data to explainable decisions.*
-
----
-
 ## 📐 What is this repository?
 
 This is the **formal specification** of LifeOS — like an RFC for cognitive architecture.
@@ -91,12 +38,32 @@ This is the **formal specification** of LifeOS — like an RFC for cognitive arc
 
 ## 🏗️ Architecture Overview
 
-![Intent-to-Action Web Stack (L0–L9)](assets/llat-layers-l0-l9.svg)
-
-> Figure — Intent-to-Action Web Stack (L0–L9). See LLAT details in [docs/llat-architecture-note.md](./docs/llat-architecture-note.md) and [spec/08-llat.md](./spec/08-llat.md).
-
-> HTML standardised how documents are displayed.  
-> .life standardises how documents carry meaning, memory, and responsibility.
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│                    🌍 GLOBAL FEDERATION OF COGNITIVE SOVEREIGNTIES 🌍        │
+│                                                                             │
+│     ┌───────────┐         ┌───────────┐         ┌───────────┐              │
+│     │ Cluster A │◄───────►│ Cluster B │◄───────►│ Cluster C │              │
+│     │ (Region)  │         │ (Region)  │         │ (Region)  │              │
+│     └─────┬─────┘         └─────┬─────┘         └─────┬─────┘              │
+│           │                     │                     │                     │
+│           ▼                     ▼                     ▼                     │
+│     ┌───────────────────────────────────────────────────────────────┐      │
+│     │                    SOLID-COMPATIBLE PODS                       │      │
+│     │   👤 Pod    👤 Pod    👤 Pod    👤 Pod    👤 Pod               │      │
+│     │   User owns their data. Apps come to the data.                 │      │
+│     └───────────────────────────────────────────────────────────────┘      │
+│                                     │                                       │
+│                                     ▼                                       │
+│     ┌───────────────────────────────────────────────────────────────┐      │
+│     │               FEDERATED MODEL LAYER                            │      │
+│     │   Models are portable. Downloaded. Run locally.                │      │
+│     │   Like HuggingFace, but for cognitive agents.                  │      │
+│     └───────────────────────────────────────────────────────────────┘      │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -112,27 +79,6 @@ This is the **formal specification** of LifeOS — like an RFC for cognitive arc
 | [05-solid-bridge](./spec/05-solid-bridge.md) | Integration with Solid Protocol |
 | [06-federation](./spec/06-federation.md) | P2P distributed infrastructure |
 | [07-agents](./spec/07-agents.md) | Agent architecture & governance |
-
-### Entry point for Web architects
-
-If you come from the **Web architecture / W3C / TAG** world and want the shortest path in:
-
-- Start with the **LLAT Architecture Note**: [docs/llat-architecture-note.md](./docs/llat-architecture-note.md)
-- Then, if needed, see the more detailed exploratory spec: [spec/08-llat.md](./spec/08-llat.md)
-
-### Deep Dives
-
-| Document | Description |
-|----------|-------------|
-| [docs/reasoning.md](./docs/reasoning.md) | Three reasoning modalities: deductive, interpretive, intentional |
-
----
-
-## 🎯 See It In Action
-
-> *"Show me one complete path through the system."*
-
-**[Intent to Action: A Complete Trace](./examples/intent-to-action.md)** — Follow a single human intention from emergence to resolution, through every layer of LifeOS.
 
 ---
 
@@ -217,25 +163,7 @@ MIT License — Build freely, attribute kindly.
 
 ---
 
-## � Citation
-
-If you use LifeOS in academic work, please cite:
-
-```bibtex
-@software{berlocher2025lifeos,
-  author       = {Berlocher, Ivan},
-  title        = {{LifeOS: A Distributed Cognitive Architecture for Human Sovereignty in the Age of AI}},
-  year         = {2025},
-  version      = {v0.1},
-  publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.18028496},
-  url          = {https://github.com/ivan-berlocher/lifeos-spec}
-}
-```
-
----
-
-## �👤 Author
+## 👤 Author
 
 **Ivan Berlocher** — Building cognitive sovereignty, one spec at a time.
 
