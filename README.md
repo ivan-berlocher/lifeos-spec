@@ -142,6 +142,8 @@ In short:
 | [05-solid-bridge](./spec/05-solid-bridge.md) | Integration with Solid Protocol |
 | [06-federation](./spec/06-federation.md) | P2P distributed infrastructure |
 | [07-agents](./spec/07-agents.md) | Agent architecture & governance |
+| [08-llat](./spec/08-llat.md) | LifeOS Logical Action Traces |
+| [09-layered-architecture](./spec/09-layered-architecture.md) | **Canonical 5-Layer Model (L0–L4)** |
 
 ### Entry point for Web architects
 
