@@ -1,0 +1,67 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e1f5fe', 'primaryTextColor': '#01579b', 'primaryBorderColor': '#0288d1', 'lineColor': '#0288d1', 'secondaryColor': '#fff3e0', 'tertiaryColor': '#f3e5f5'}}}%%
+
+graph TB
+    subgraph SYSTEM["🏗️ LifeOS SYSTEM (Where it lives)"]
+        direction TB
+        L9["L9: Governance"]
+        L8["L8: Meta-cognition"]
+        L7["L7: Reflection"]
+        L6["L6: Action"]
+        L5["L5: Decision"]
+        L4["L4: Reasoning"]
+        L3["L3: Interpretation"]
+        L2["L2: Memory"]
+        L1["L1: Perception"]
+        L0["L0: Physical"]
+        
+        L9 --> L8 --> L7 --> L6 --> L5 --> L4 --> L3 --> L2 --> L1 --> L0
+    end
+
+    subgraph ACADEMIC["📚 ACADEMIC DEPTH (Contribution Level)"]
+        direction TB
+        A4["L4: Validated System"]
+        A3["L3: Instanciable Mechanism"]
+        A2["L2: New Conceptual Frame"]
+        A1["L1: Why current fails"]
+        A0["L0: Problem definition"]
+        
+        A4 --> A3 --> A2 --> A1 --> A0
+    end
+
+    subgraph OPAR["🔄 OPAR (Cognitive Flow)"]
+        direction LR
+        O["Observe"] --> P["Process"] --> A["Act"] --> R["Reflect"]
+        R -.-> O
+    end
+
+    subgraph PAPERS["📄 PAPERS"]
+        ICML["ICML 2026<br/>PEM (L3)"]
+        LLAT["LLAT/SIAM<br/>Thesis (L1-L2)"]
+        NEURIPS["NeurIPS 2026<br/>PEM+Agent (L3-L4)"]
+    end
+
+    %% Connections
+    ICML --> A3
+    LLAT --> A2
+    NEURIPS --> A4
+    
+    ICML --> L1
+    LLAT --> L2
+    LLAT --> L3
+    LLAT --> L4
+    LLAT --> L5
+    
+    O --> L1
+    O --> L2
+    P --> L3
+    P --> L4
+    A --> L5
+    A --> L6
+    R --> L7
+    R --> L8
+
+    %% PEM spans
+    PEM["⚠️ PEM<br/>Error Memory"]
+    PEM -.-> O
+    PEM -.-> R
+    PEM --> ICML
