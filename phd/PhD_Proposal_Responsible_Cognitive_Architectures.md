@@ -6,7 +6,7 @@
 
 ---
 
-**Candidate**: Ivan Googolev  
+**Candidate**: Ivan Berlocher  
 **Date**: December 2025  
 **Target Institutions**: ETH Zürich, University of Southampton, Max Planck Institute  
 **Format**: Position-driven PhD Proposal
